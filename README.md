@@ -1,1 +1,1 @@
-# MaraphonePythonSoftServe
+# python-online-maramthon

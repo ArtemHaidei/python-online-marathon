@@ -3,6 +3,8 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+debugging.sublime-workspace
+debugging.sublime-project
 
 # Icon must end with two \r
 Icon
@@ -57,3 +59,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+/shelf/
+/workspace.xml
+.idea/
+.vscode/

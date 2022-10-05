@@ -1,0 +1,37 @@
+#  The string defining the points of the quadrilateral has the next form: "#LB1:1#RB4:1#LT1:3#RT4:3"
+
+#  - LB - Left Bottom point
+#  - LT - Left Top point
+#  - RT - Right Top point
+#  - RB - Right Bottom point
+#  - numbers after letters are the coordinates of a point.
+#  Write a function figure_perimetr() that calculates the perimeter of a quadrilateral
+
+#  The formula for calculating the distance between points:
+#  (((x2 - x1) ** 2) + ((y2 - y1)) ** 2) ** 0.5
+
+
+
+def vectors_length(x1, x2, y1, y2):
+	return (((x2 - x1) ** 2) + ((y2 - y1)) ** 2) ** 0.5
+
+
+def figure_perimetr(string):
+	#order - LB, LT, RT, RB
+	vectors = {x[0:2]: (int(x[-3]), int(x[-1])) for x in string[1:].split("#")}
+
+	v1 = vectors_length(vectors['LB'][0], vectors['LT'][0], vectors['LB'][1], vectors['LT'][1])
+	v2 = vectors_length(vectors['LT'][0], vectors['RT'][0], vectors['LT'][1], vectors['RT'][1])
+	v3 = vectors_length(vectors['RT'][0], vectors['RB'][0], vectors['RT'][1], vectors['RB'][1])
+	v4 = vectors_length(vectors['RB'][0], vectors['LB'][0], vectors['RB'][1], vectors['LB'][1])
+
+	return sum([v1, v2, v3, v4])
+
+
+#tests
+
+test1 = "#LB1:1#RB4:1#LT1:3#RT4:3"
+print(figure_perimetr(test1))
+
+test2 = "#LB0:1#RB5:1#LT4:5#RT8:3"
+print(figure_perimetr(test2))

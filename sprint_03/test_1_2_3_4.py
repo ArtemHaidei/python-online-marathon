@@ -2,7 +2,7 @@
 # def outer(name):
 #     def inner():
 #         print(f'Hello, {name}!')
-    
+#
 #     return inner
 
 
@@ -11,9 +11,9 @@
 
 
 #test 3
-# from re import search
-#
-#
+from re import search
+
+
 # def create_account(user_name: str, password: str, secret_words: list):
 #     if len([x for x in [r'[a-z]', r'[A-Z]', r'[0-9]', r'[^a-zA-Z0-9]'] if search(x, password)]) != 4 \
 #             or len(password) < 6:
@@ -63,8 +63,8 @@
 #         print(f'Executing of function {func.__name__} with arguments {", ".join(lst)}...')
 #         return func(*args, **kwargs)
 #     return wrapper
-#
-#
+# #
+# #
 # @logger
 # def concat(*args, **kwargs):
 #     lst = [str(x) for x in args]
@@ -89,12 +89,12 @@
 # print_arg(2)
 
 
-# test 6
-# from random import shuffle
-#
-#
+#test 6
+from random import shuffle
+
+
 # def randomWord(lst):
-#     if len(lst) == 0:
+#     if not lst:
 #         lst += [None]
 #
 #     shuffle(lst)
@@ -103,3 +103,21 @@
 #
 #     for x in randomWord(lst):
 #         yield x
+
+
+# def randomWord(a):
+#     if not a:
+#         yield
+#
+#     shuffle(a)
+#     lst = iter(a)
+#     index = 0
+#
+#     while True:
+#         if index < len(a):
+#             yield next(lst)
+#             index += 1
+#         else:
+#             shuffle(a)
+#             lst = iter(a)
+#             index = 0

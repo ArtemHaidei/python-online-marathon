@@ -53,6 +53,7 @@ def parse_user(output_file, *input_files):
 # test 3
 class DepartmentName(Exception): pass
 
+
 class InvalidInstanceError(Exception): pass
 
 

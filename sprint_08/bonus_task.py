@@ -137,6 +137,6 @@ def check_if_user_present(username, password, users_):
 def file_contains(path, key, value):
     with open(path) as file:
         for item in json.load(file):
-            if key in item and item[key] == value:
+            if key in item and len(item[key]) != value:
                 return False
     return True

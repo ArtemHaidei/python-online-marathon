@@ -1,10 +1,11 @@
 import unittest
-#from sprint_08.all_functions import Cart, Product
-#from sprint_08.all_functions import divide
-#from sprint_08.all_functions import quadratic_equation
-#from sprint_08.all_functions import Triangle, TriangleNotExistException, TriangleNotValidArgumentException
-#from sprint_08.all_functions import Worker
-from unittest.mock import Mock
+from unittest.mock import patch, mock_open
+# from sprint_08.all_functions import Cart, Product
+# from sprint_08.all_functions import divide
+# from sprint_08.all_functions import quadratic_equation
+# from sprint_08.all_functions import Triangle, TriangleNotExistException, TriangleNotValidArgumentException
+from sprint_08.all_functions import Worker
+# from sprint_08.all_functions import file_parser
 
 
 # task 1 / sprint_08
@@ -111,46 +112,67 @@ from unittest.mock import Mock
 
 
 # test 5 / sprint_08
-# class WorkerTest(unittest.TestCase):
-#     def setUp(self):
-#         self.work1 = Worker('Dima', 1000)
-#         self.work2 = Worker('Kostya', 50000)
-#         self.work3 = Worker('Lia', 5001)
-#         self.work4 = Worker('Nastia', 2999)
-#         self.work5 = Worker('Camelia', 55000)
-#         self.work6 = Worker('Rita')
-#
-#     def tearDown(self):
-#         pass
-#
-#     def test_worker_get_tax_value_work1(self):
-#         self.assertEqual(self.work1.get_tax_value(), 0.0)
-#
-#     def test_worker_get_tax_value_work2(self):
-#         self.assertEqual(self.work2.get_tax_value(), 16550.0)
-#
-#     def test_worker_get_tax_value_work3(self):
-#         self.assertEqual(self.work3.get_tax_value(), 500.15)
-#
-#     def test_worker_get_tax_value_work4(self):
-#         self.assertEqual(self.work4.get_tax_value(), 199.9)
-#
-#     def test_worker_get_tax_value_work5(self):
-#         self.assertEqual(self.work5.get_tax_value(), 18550.0)
-#
-#     def test_worker_get_tax_value_work6(self):
-#         self.assertEqual(self.work6.get_tax_value(), 0.0)
-#
-#     @unittest.expectedFailure
-#     def test_worker_except(self):
-#         Worker('Max', -500)
+class WorkerTest(unittest.TestCase):
+    def setUp(self):
+        self.work1 = Worker('Dima', 1000)
+        self.work2 = Worker('Kostya', 50000)
+        self.work3 = Worker('Lia', 5001)
+        self.work4 = Worker('Nastia', 2999)
+        self.work5 = Worker('Camelia', 55000)
+        self.work6 = Worker('Rita')
+
+    def tearDown(self):
+        pass
+
+    def test_worker_get_tax_value_work1(self):
+        self.assertEqual(self.work1.get_tax_value(), 0.0)
+
+    def test_worker_get_tax_value_work2(self):
+        self.assertEqual(self.work2.get_tax_value(), 16550.0)
+
+    def test_worker_get_tax_value_work3(self):
+        self.assertEqual(self.work3.get_tax_value(), 500.15)
+
+    def test_worker_get_tax_value_work4(self):
+        self.assertEqual(self.work4.get_tax_value(), 199.9)
+
+    def test_worker_get_tax_value_work5(self):
+        self.assertEqual(self.work5.get_tax_value(), 18550.0)
+
+    def test_worker_get_tax_value_work6(self):
+        self.assertEqual(self.work6.get_tax_value(), 0.0)
+
+    # @unittest.expectedFailure
+    # def test_worker_except(self):
+    #     Worker('Max', -500)
 
 
 # test 6 / sprint_08
-class ParserTest(unittest.TestCase):
-    pass
+# class ParserTest(unittest.TestCase):
+#     def setUp(self):
+#         self.file_content_mock = """Hello World!!
+# Hello World is in a file.
+# A mocked file.
+# He is not real.
+# But he think he is.
+# He doesn't know he is mocked"""
+#         self.fake_file_path = 'file/path/mock'
+#
+#     def test_file_parser_count_strings(self):
+#         with patch('builtins.open', mock_open(read_data=self.file_content_mock)) as file:
+#             actual = file_parser(self.fake_file_path, 'is')
+#             file.assert_called_once_with(self.fake_file_path, 'r')
+#
+#         expected = 'Found 4 strings'
+#         self.assertEqual(expected, actual)
+#
+#     def test_file_parser_count_replace_strings(self):
+#         with patch('builtins.open', mock_open(read_data=self.file_content_mock)) as file:
+#             actual = file_parser(self.fake_file_path, 'is', 'are')
+#             file.assert_called_once_with(self.fake_file_path, 'r+')
+#         expected = 'Replaced 4 strings'
+#         self.assertEqual(expected, actual)
 
 
 if __name__ == '__main__':
     unittest.main()
-

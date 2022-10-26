@@ -1,16 +1,16 @@
 # test 1
-# import re
-#
-#
-# def valid_email(email):
-#     try:
-#         check_re = r'[\w]{3,}@[a-z]{3,}(\.[a-z]{2,})?\.[a-z]{2,3}'
-#         if not re.match(check_re, email):
-#             raise Exception
-#     except:
-#         return "Email is not valid"
-#     else:
-#         return "Email is valid"
+import re
+
+
+def valid_email(email):
+    try:
+        check_re = r'[\w]{3,}@[a-z]{3,}(\.[a-z]{2,})?\.[a-z]{2,3}'
+        if not re.match(check_re, email):
+            raise Exception
+    except:
+        return "Email is not valid"
+    else:
+        return "Email is valid"
 
 
 # test 2

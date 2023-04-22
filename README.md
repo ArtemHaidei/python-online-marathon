@@ -1,1 +1,1 @@
-# python-online-marathon
+# python-online-marathon from SoftServe
